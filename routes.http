@@ -1,0 +1,57 @@
+# Adiciona um novo livro
+POST http://localhost:3333/livros
+Content-Type: application/json
+
+{
+    "titulo": "Tudo é Rio",
+    "escritor": "Carla",
+    "paginas": 666
+}
+
+###
+
+# Lista todos os livros
+GET http://localhost:3333/livros
+
+###
+
+# Atualiza um exemplar existente
+PUT http://localhost:3333/livros/237b213d-13de-4466-b26f-fda655e174f4
+Content-Type: application/json
+
+{
+    "titulo": "Sistemas Operacionais",
+    "escritor": "Maziero",
+    "paginas": 1000
+}
+
+###
+
+# Deleta um exemplar específico
+DELETE http://localhost:3333/livros/
+
+###
+
+# Lista de reservas feitas
+GET http://localhost:3333/reservas
+
+###
+
+# Faz uma reserva para um exemplar
+POST http://localhost:3333/reservas
+Content-Type: application/json
+
+{
+    "exemplarId": "66f24750-455b-47c6-ae55-fa1d3f3002c9"
+}
+
+###
+
+# Faz uma devolução de um exemplar
+POST http://localhost:3333/devolucoes
+Content-Type: application/json
+
+{
+    "exemplar_id": "66f24750-455b-47c6-ae55-fa1d3f3002c9",
+    "livro_id": "b1076ebc-d86e-456b-9d4c-b3aecee0c399"
+}
